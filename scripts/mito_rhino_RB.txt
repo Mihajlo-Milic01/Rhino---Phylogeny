@@ -1,9 +1,6 @@
-getwd()
-setwd("C:\\RevBayes\\Rhinos")
-
 ## loading the data
 
-filenames <- v("data/rrna.nex", "data/coding_1.nex", "data/coding_2.nex", "data/coding_3.nex")
+filenames <- v("../data/rrna.nex", "../data/coding_1.nex", "../data/coding_2.nex", "../data/coding_3.nex")
 n_data_subsets <- filenames.size()
 
 for(i in 1:n_data_subsets){
@@ -92,14 +89,14 @@ for (i in 1:n_data_subsets) {
 
 my_model = model(psi)
 
-monitors.append( mnModel(filename="output/mito_rhino_RB.log",printgen=50) )
-monitors.append( mnFile(psi, filename="output/mito_rhino_RB.trees", printgen=50) )
+monitors.append( mnModel(filename="../output/mito_rhino_RB.log",printgen=50) )
+monitors.append( mnFile(psi, filename="../output/mito_rhino_RB.trees", printgen=50) )
 monitors.append( mnScreen(TL, printgen=10) )
 
 mymcmc = mcmc(my_model, moves, monitors, nruns=1)
 mymcmc.run(100000, tuningInterval=200)
 
-treetrace = readTreeTrace("output/mito_rhino_RB.trees", treetype="non-clock")
+treetrace = readTreeTrace("../output/mito_rhino_RB.trees", treetype="non-clock")
 treetrace.summarize()
-mapTree(treetrace, "output/mito_rhino_MAP.tre")
-mapTree(treetrace, "output/mito_rhino_MAP.tre")
+mapTree(treetrace, "../output/mito_rhino_MAP.tre")
+mapTree(treetrace, "../output/mito_rhino_MAP.tre")
