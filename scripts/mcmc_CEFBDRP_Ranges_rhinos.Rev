@@ -10,7 +10,7 @@ dna_data[i] = readDiscreteCharacterData(filenames[i])
 
 num_sites <- v(dna_data[1].nchar(), dna_data[2].nchar(), dna_data[3].nchar(), dna_data[4].nchar())
 
-morpho <- readDiscreteCharacterData("../data/finalizing_matrix_RB_rhinos.nex")
+morpho <- readDiscreteCharacterData("../data/character_matrix_RB_rhinos.nex")
 
 n_taxa <- taxa.size()
 moves = VectorMoves()
