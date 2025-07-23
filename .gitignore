@@ -1,0 +1,6 @@
+# not adding the output
+output*
+
+# no helper files
+.DS_Store
+history.txt
