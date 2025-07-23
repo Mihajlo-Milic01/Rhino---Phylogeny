@@ -37,7 +37,15 @@ for (i in 1:n_data_subsets) {
     moves.append( mvBetaProbability(pinvar[i], offset=1.0, delta=10.0, tune=true, weight=1.0) )
 }
 
+rel_part_rates_prior <- rep(1,n_data_subsets)
+rel_part_rates ~ dnDirichlet(rel_part_rates_prior)
+moves.append( mvBetaSimplex(rel_part_rates, weight=n_data_subsets) )
+moves.append( mvDirichletSimplex(rel_part_rates, weight=2.0) )
+
+
+part_rates := rel_part_rates * n_data_subsets
+
 for (i in 1:n_data_subsets) {
-    seq[i] ~ dnPhyloCTMC(tree=fbd_tree, Q=Q_dna[i], branchRates=branch_rates[i], siteRates=gamma_rates[i], pInv=pinvar[i], type="DNA")
+    seq[i] ~ dnPhyloCTMC(tree=phylogeny, Q=Q_dna[i], branchRates=branch_rates*part_rates[i], siteRates=gamma_rates[i], pInv=pinvar[i], type="DNA")
     seq[i].clamp(dna_data[i])
 }
