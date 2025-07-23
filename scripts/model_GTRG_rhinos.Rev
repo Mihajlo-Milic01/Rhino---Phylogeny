@@ -1,4 +1,4 @@
-## Creating Q matrix 
+## Creating Q matrix
 # excangeability rates
 
 for (i in 1:n_data_subsets) {
@@ -18,13 +18,14 @@ for (i in 1:n_data_subsets) {
 # GTR model matrix
 
 for (i in 1:n_data_subsets) {
-    Q_dna[i] := fnGTR(er[i],pi[i]) 
+    Q_dna[i] := fnGTR(er[i],pi[i])
 }
 
 ## +G +I
 
 for (i in 1:n_data_subsets) {
-    alpha[i] ~ dnExponential( 1.0 )
+    alpha[i] ~ dnUniform( 0.0, 1E8 )
+    alpha[i].setValue( 1.0 )
     gamma_rates[i] := fnDiscretizeGamma( alpha[i], alpha[i], 4)
     moves.append( mvScale(alpha[i], lambda=0.01, weight=1.0) )
     moves.append( mvScale(alpha[i], lambda=0.1,  weight=1.0) )
