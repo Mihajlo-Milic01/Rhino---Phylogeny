@@ -12,9 +12,9 @@ moves.append( mvScale(extinction_rate, lambda=1,    weight=1) )
 diversification := speciation_rate - extinction_rate
 turnover := extinction_rate/speciation_rate
 
-rho <- 1.0 #probability of sampling extant taxa (all living rhino species are present in the character matix)
+rho <- 1.0 #probability of sampling extant taxa (all living rhino species are present in the character matrix)
 
-psi ~ dnExponential(10) # fosill recovery (sampling) rate 
+psi ~ dnExponential(10) # fosill recovery (sampling) rate
 
 moves.append( mvScale(psi, lambda=0.01, weight=1) )
 moves.append( mvScale(psi, lambda=0.1,  weight=1) )
@@ -26,19 +26,19 @@ moves.append( mvSlide(origin_time, delta=0.01, weight=5.0) )
 moves.append( mvSlide(origin_time, delta=0.1,  weight=5.0) )
 moves.append( mvSlide(origin_time, delta=1,    weight=5.0) )
 
-fbd_dist = dnFBDP(originAge=origin_time, lambda=speciation_rate, mu=extinction_rate, psi=psi, rho=rho, taxa=taxa)
-## might use the different function for our FBD model
+phylogeny ~ dnFBDP(originAge=origin_time, lambda=speciation_rate, mu=extinction_rate, psi=psi, rho=rho, taxa=taxa)
 
+## might use the different function for our FBD model
 ### potential clade constraints for our dataset ###
 
-##fbd_tree ~ dnConstrainedTopology(fbd_dist, constraints=constraints)
+##phylogeny ~ dnConstrainedTopology(fbd_dist, constraints=constraints)
 
-moves.append( mvFNPR(fbd_tree, weight=15.0) )
-moves.append( mvCollapseExpandFossilBranch(fbd_tree, origin_time, weight=6.0) ) # do we need this?
+moves.append( mvFNPR(phylogeny, weight=15.0) )
+moves.append( mvCollapseExpandFossilBranch(phylogeny, origin_time, weight=6.0) ) # do we need this?
 
-moves.append( mvNodeTimeSlideUniform(fbd_tree, weight=40.0) )
-moves.append( mvRootTimeSlideUniform(fbd_tree, origin_time, weight=5.0) )
+moves.append( mvNodeTimeSlideUniform(phylogeny, weight=40.0) )
+moves.append( mvRootTimeSlideUniform(phylogeny, origin_time, weight=5.0) )
 
-num_samp_anc := fbd_tree.numSampledAncestors()
+num_samp_anc := phylogeny.numSampledAncestors()
 
-#age_extant := tmrca(fbd_tree, clade_extant) # MRCA age of all extant bearas	
+#age_extant := tmrca(phylogeny, clade_extant) # MRCA age of all extant bears
