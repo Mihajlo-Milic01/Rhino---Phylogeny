@@ -1,39 +1,44 @@
 #loading the data
-taxa <- readTaxonData("../data/stratigraphical_ranges_rhinos.tsv")
+taxa <- readTaxonData("data/stratigraphical_ranges_rhinos.tsv")
 
-filenames <- v("../data/rrna.nex", "../data/coding_1.nex", "../data/coding_2.nex", "../data/coding_3.nex")
+filenames <- v("data/rrna.nex", "data/coding_1.nex", "data/coding_2.nex", "data/coding_3.nex")
 n_data_subsets <- filenames.size()
 
 for(i in 1:n_data_subsets){
-dna_data[i] = readDiscreteCharacterData(filenames[i])
+  dna_data[i] = readDiscreteCharacterData(filenames[i])
+  dna_data[i].addMissingTaxa(taxa)
 }
 
-num_sites <- v(dna_data[1].nchar(), dna_data[2].nchar(), dna_data[3].nchar(), dna_data[4].nchar())
-
-morpho <- readDiscreteCharacterData("../data/character_matrix_RB_rhinos.nex")
+morpho <- readDiscreteCharacterData("data/character_matrix_RB_rhinos.nex")
 
 n_taxa <- taxa.size()
 moves = VectorMoves()
 
 ## Calling other scripts
 
-source("../scripts/model_FBDRP_rhinos.Rev") # FBD tree prior
+source("scripts/model_FBDRP_rhinos.Rev") # FBD tree prior
 
-source("../scripts/model_UExp_rhinos.Rev") # UExp relaxed clock
+source("scripts/model_UCLN_rhinos.Rev") # UExp relaxed clock
 
-source("../scripts/model_GTRG_rhinos.Rev") # Molecular substitution model (GTR+G)
+source("scripts/model_GTRG_rhinos.Rev") # Molecular substitution model (GTR+G)
 
-source("../scripts/model_Morph_rhinos.Rev") # Morphological character change model
+source("scripts/model_Morph_rhinos.Rev") # Morphological character change model
 
 mymodel = model(pi)
 
 monitors = VectorMonitors()
 
-monitors.append( mnModel(filename="../output/rihnos_FBD_RB.log", printgen=10) )
-monitors.append( mnFile(filename="../output/rihnos_FBD_RB.trees", printgen=10, fbd_tree) )
-monitors.append( mnScreen(printgen=10, age_extant, num_samp_anc, origin_time) )
+monitors.append( mnModel(filename="output/rhinos_FBD_RB.log", printgen=10) )
+monitors.append( mnFile(filename="output/rhinos_FBD_RB.trees", printgen=10, phylogeny) )
+monitors.append( mnScreen(printgen=10) )
 
-mymcmc = mcmc(mymodel, monitors, moves)
-mymcmc.run(generations=10000)
+mymcmc = mcmc(mymodel, monitors, moves, nruns=4, combine="mixed")
+mymcmc.run(generations=50000, tuningInterval=100)
+
+# summarize output
+treetrace = readTreeTrace("output/rhinos_FBD_RB.trees", treetype="clock")
+# and then get the MAP tree
+map_tree = mapTree(treetrace,"output/rhinos_FBD_RB_MAP.tre")
+mcc_tree = mapTree(treetrace,"output/rhinos_FBD_RB_MCC.tre")
 
 q() # tell program to quit once the analysis is done
