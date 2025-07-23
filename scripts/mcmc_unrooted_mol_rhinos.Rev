@@ -1,0 +1,39 @@
+#loading the data
+filenames <- v("data/rrna.nex", "data/coding_1.nex", "data/coding_2.nex", "data/coding_3.nex")
+n_data_subsets <- filenames.size()
+
+for(i in 1:n_data_subsets) {
+  dna_data[i] = readDiscreteCharacterData(filenames[i])
+}
+
+taxa = dna_data[1].taxa()
+n_taxa = taxa.size()
+moves = VectorMoves()
+
+## Calling other scripts
+
+source("scripts/model_unrooted_rhinos.Rev") # unrooted tree prior
+
+branch_rates <- 1.0
+
+source("scripts/model_GTRG_rhinos.Rev") # Molecular substitution model (GTR+G)
+
+mymodel = model(pi)
+
+monitors = VectorMonitors()
+
+monitors.append( mnModel(filename="output/rhinos_unrooted.log", printgen=10) )
+monitors.append( mnFile(filename="output/rhinos_unrooted.trees", printgen=10, phylogeny) )
+monitors.append( mnScreen(printgen=100) )
+
+mymcmc = mcmc(mymodel, monitors, moves, nruns=4, combine="mixed")
+mymcmc.run(generations=50000, tuningInterval=100)
+
+# summarize output
+treetrace = readTreeTrace("output/rhinos_unrooted.trees", treetype="non-clock")
+# and then get the MAP tree
+map_tree = mapTree(treetrace,"output/rhinos_unrooted_MAP.tre")
+mcc_tree = mapTree(treetrace,"output/rhinos_unrooted_MCC.tre")
+
+
+q() # tell program to quit once the analysis is done
