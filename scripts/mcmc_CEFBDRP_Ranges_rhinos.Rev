@@ -18,7 +18,7 @@ moves = VectorMoves()
 
 source("scripts/model_FBDRP_rhinos.Rev") # FBD tree prior
 
-source("scripts/model_UCLN_rhinos.Rev") # UExp relaxed clock
+source("scripts/model_UExp_rhinos.Rev") # UExp relaxed clock
 
 source("scripts/model_GTRG_rhinos.Rev") # Molecular substitution model (GTR+G)
 
@@ -32,7 +32,7 @@ monitors.append( mnModel(filename="output/rhinos_FBD_RB.log", printgen=10) )
 monitors.append( mnFile(filename="output/rhinos_FBD_RB.trees", printgen=10, phylogeny) )
 monitors.append( mnScreen(printgen=10) )
 
-mymcmc = mcmc(mymodel, monitors, moves, nruns=4, combine="mixed")
+mymcmc = mcmc(mymodel, monitors, moves, nruns=1, combine="mixed")
 mymcmc.run(generations=50000, tuningInterval=100)
 
 # summarize output

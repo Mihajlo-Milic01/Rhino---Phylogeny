@@ -20,18 +20,28 @@ moves.append( mvScale(psi, lambda=0.01, weight=1) )
 moves.append( mvScale(psi, lambda=0.1,  weight=1) )
 moves.append( mvScale(psi, lambda=1,    weight=1) )
 
-origin_time ~ dnUnif(55.0, 64.0) # Divergence of Rhinocerotoidea and lineage leading to modern Tapiridae; based on Liu et al 2021 and Bai et al 2020
+origin_time ~ dnUnif(55.0, 65.0) # Divergence of Rhinocerotoidea and lineage leading to modern Tapiridae; based on Liu et al 2021 and Bai et al 2020
 
 moves.append( mvSlide(origin_time, delta=0.01, weight=5.0) )
 moves.append( mvSlide(origin_time, delta=0.1,  weight=5.0) )
 moves.append( mvSlide(origin_time, delta=1,    weight=5.0) )
 
-phylogeny ~ dnFBDP(originAge=origin_time, lambda=speciation_rate, mu=extinction_rate, psi=psi, rho=rho, taxa=taxa)
+fbd_dist ~ dnFBDP(originAge=origin_time, lambda=speciation_rate, mu=extinction_rate, psi=psi, rho=rho, taxa=taxa)
 
 ## might use the different function for our FBD model
-### potential clade constraints for our dataset ###
 
-##phylogeny ~ dnConstrainedTopology(fbd_dist, constraints=constraints)
+## Topological constraints
+# outgroup
+
+ingroup_taxa = taxa
+ingroup_taxa.erase( taxon("Tapirus_terrestris") )
+
+ingroup = clade(ingroup_taxa)
+
+constraints = v(ingroup)
+
+
+phylogeny ~ dnConstrainedTopology(fbd_dist, constraints=constraints)
 
 moves.append( mvFNPR(phylogeny, weight=15.0) )
 moves.append( mvCollapseExpandFossilBranch(phylogeny, origin_time, weight=6.0) ) # do we need this?
