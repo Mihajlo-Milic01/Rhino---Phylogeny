@@ -7,13 +7,13 @@ acct=nn9883k
 mkdir -p ../log/
 
 # Set the log files.
-log_out=../log/rhino_slurm.out
-log_err=../log/rhino_slurm.err
+log_out=log/rhino_slurm.out
+log_err=log/rhino_slurm.err
 rm -f ${log_out}
 rm -f ${log_err}
 
 # Set the revbayes script.
-rb_script=mcmc_CEFBDRP_Ranges_rhinos.Rev
+rb_script=scripts/mcmc_CEFBDRP_Ranges_rhinos.Rev
 
 # Launch revbayes job.
-sbatch -A ${acct} -o ${log_out} -e ${log_err} run_on_saga.slurm ${rb_script}
+sbatch -A ${acct} -o ${log_out} -e ${log_err} scripts/run_on_saga.slurm ${rb_script}

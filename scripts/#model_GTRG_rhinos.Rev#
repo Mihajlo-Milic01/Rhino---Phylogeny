@@ -1,4 +1,4 @@
-## Creating Q matrix
+0;10;1c0;10;1c## Creating Q matrix
 # excangeability rates
 
 for (i in 1:n_data_subsets) {
@@ -42,7 +42,7 @@ for (i in 1:n_data_subsets) {
 #moves.append( mvDirichletSimplex(rel_part_rates, weight=2.0) )
 
 
-#part_rates := rel_part_rates * n_data_subsets
+part_rates := rel_part_rates * n_data_subsets
 
 for (i in 1:n_data_subsets) {
     seq[i] ~ dnPhyloCTMC(tree=phylogeny, Q=Q_dna[i], branchRates=clock_strict, siteRates=gamma_rates[i], pInv=pinvar[i], type="DNA")

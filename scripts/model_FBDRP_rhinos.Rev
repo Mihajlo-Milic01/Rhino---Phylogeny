@@ -26,20 +26,31 @@ moves.append( mvSlide(origin_time, delta=0.01, weight=5.0) )
 moves.append( mvSlide(origin_time, delta=0.1,  weight=5.0) )
 moves.append( mvSlide(origin_time, delta=1,    weight=5.0) )
 
-fbd_dist ~ dnFBDP(originAge=origin_time, lambda=speciation_rate, mu=extinction_rate, psi=psi, rho=rho, taxa=taxa)
+fbd_dist = dnFBDP(origin=origin_time, lambda=speciation_rate, mu=extinction_rate, psi=psi, rho=rho, taxa=taxa)
+
+#phylogeny ~ dnFBDP(originAge=origin_time, lambba=speciation_rate, mu=extinction_rate, psi=psi, rho=rho, taxa=taxa)
 
 ## might use the different function for our FBD model
 
 ## Topological constraints
 # outgroup
 
-ingroup_taxa = taxa
-ingroup_taxa.erase( taxon("Tapirus_terrestris") )
+#ingroup_taxa = taxa
+#ingroup_taxa.erase( taxon("Tapirus_terrestris") )
 
-ingroup = clade(ingroup_taxa)
+ingroup = clade("Aceratherium_incisivum", "Acerorhinus_zernowi", "Alicornops_alfambrense", "Alicornops_complanatum", "Alicornops_simorrense", "Aprotodon_fatehjangense",
+"Brachypotherium_brachypus", "Brachypotherium_perimense", "Bugtirhinus_praecursor", "Ceratotherium_neumayri", "Ceratotherium_simum", "Chilotherium_anderssoni",
+"Chilotherium_kowalevskii", "Chilotherium_perisae", "Coelodonta_antiquitatis", "Diaceratherium_lemanense", "Diceratherium_sp", "Dicerorhinus_fusuiensis",
+"Dicerorhinus_sumatrensis", "Diceros_bicornis", "Diceros_praecox", "Dihoplus_schleiermacheri", "Dromoceratherium_mirallesi", "Elasmotherium_sibiricum",
+"Epiaceratherium_bolcense", "Epiaceratherium_delemontense", "Gaindatherium_browni", "Hispanotherium_beonense", "Hoploaceratherium_tetradactylum", 
+"Lartetotherium_sansaniense", "Menoceras_arikarense", "Nesorhinus_hayasakai", "Nesorhinus_philippinensis", "Plesiaceratherium_fahlbuschi", "Pleuroceros_blanfordi",
+"Pleuroceros_pleuroceros", "Pliorhinus_megarhinus", "Pliorhinus_miguelcrusafonti", "Pliorhinus_ringstroemi", "Prosantorhinus_douvillei", "Protaceratherium_minutum", 
+"Rhinoceros_kendengindicus", "Rhinoceros_platyrhinus","Rhinoceros_sinensis", "Rhinoceros_sondaicus", "Rhinoceros_unicornis", "Ronzotherium_filholi", "Ronzotherium_romani",
+"Shansirhinus_ringstromi", "Stephanorhinus_etruscus", "Stephanorhinus_kirchbergensis", "Stephanorhinus_pikermiensis", "Subhyracodon_mitis",
+"Teleoceras_aepysoma", "Trigonias_osborni", "Victoriaceros_hooijeri", "Metamynodon_planifrons", "Sellamynodon_zimborensis", 
+"Hyrachyus_eximius", "Hyracodon_nebraskensis", "Paraceratherium_bugtiense", "Paraceratherium_grangeri")
 
 constraints = v(ingroup)
-
 
 phylogeny ~ dnConstrainedTopology(fbd_dist, constraints=constraints)
 
