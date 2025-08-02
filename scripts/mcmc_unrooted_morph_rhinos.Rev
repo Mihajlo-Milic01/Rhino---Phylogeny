@@ -1,0 +1,34 @@
+#loading the data
+morpho <- readDiscreteCharacterData("data/character_matrix_RB_rhinos.nex")
+
+taxa = morpho.taxa()
+n_taxa <- taxa.size()
+moves = VectorMoves()
+
+## Calling other scripts
+
+source("scripts/model_unrooted_rhinos.Rev") # unrooted tree prior
+
+branch_rates <- 1.0
+
+source("scripts/model_Morph_rhinos.Rev") # model of character evolution
+
+mymodel = model(alpha_morpho)
+
+monitors = VectorMonitors()
+
+monitors.append( mnModel(filename="output/unrooted_rhinos_morph.log", printgen=10) )
+monitors.append( mnFile(filename="output/unrooted_rhinos_morph.trees", printgen=10, phylogeny) )
+monitors.append( mnScreen(printgen=100) )
+
+mymcmc = mcmc(mymodel, monitors, moves, nruns=1, combine="mixed")
+mymcmc.run(generations=50000, tuningInterval=100)
+
+# summarize output
+treetrace = readTreeTrace("output/rhinos_unrooted.trees", treetype="non-clock")
+# and then get the MAP tree
+map_tree = mapTree(treetrace,"output/unrooted_rhinos_morph_MAP.tre")
+mcc_tree = mapTree(treetrace,"output/unrooted_rhinos_morph_MCC.tre")
+
+
+q() # tell program to quit once the analysis is done
