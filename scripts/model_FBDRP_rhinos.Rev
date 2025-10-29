@@ -50,7 +50,17 @@ ingroup = clade("Aceratherium_incisivum", "Acerorhinus_zernowi", "Alicornops_alf
 "Teleoceras_aepysoma", "Trigonias_osborni", "Victoriaceros_hooijeri", "Metamynodon_planifrons", "Sellamynodon_zimborensis", 
 "Hyrachyus_eximius", "Hyracodon_nebraskensis", "Paraceratherium_bugtiense", "Paraceratherium_grangeri")
 
-constraints = v(ingroup)
+
+#clade Amynodontidae 
+clade_amynodontidae = clade("Metamynodon_planifrons", "Sellamynodon_zimborensis")
+
+#clade Paraceratheriidae   
+clade_paraceratheriidae  = clade("Paraceratherium_bugtiense", "Paraceratherium_grangeri")
+
+# Stephanorhinus genus
+clade_stephanorhinus = clade("Stephanorhinus_etruscus", "Stephanorhinus_kirchbergensis", "Stephanorhinus_pikermiensis")
+
+constraints = v(ingroup, clade_amynodontidae, clade_paraceratheriidae, clade_stephanorhinus)
 
 phylogeny ~ dnConstrainedTopology(fbd_dist, constraints=constraints)
 
