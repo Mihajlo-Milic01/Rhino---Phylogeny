@@ -50,6 +50,17 @@ ingroup = clade("Aceratherium_incisivum", "Acerorhinus_zernowi", "Alicornops_alf
 "Teleoceras_aepysoma", "Trigonias_osborni", "Victoriaceros_hooijeri", "Metamynodon_planifrons", "Sellamynodon_zimborensis", 
 "Hyrachyus_eximius", "Hyracodon_nebraskensis", "Paraceratherium_bugtiense", "Paraceratherium_grangeri")
 
+# familiy Rhinoceroditae - needed since Paraceratherium appeared within familiy
+clade_rhinocerotidae = clade("Aceratherium_incisivum", "Acerorhinus_zernowi", "Alicornops_alfambrense", "Alicornops_complanatum", "Alicornops_simorrense", "Aprotodon_fatehjangense",
+"Brachypotherium_brachypus", "Brachypotherium_perimense", "Bugtirhinus_praecursor", "Ceratotherium_neumayri", "Ceratotherium_simum", "Chilotherium_anderssoni",
+"Chilotherium_kowalevskii", "Chilotherium_perisae", "Coelodonta_antiquitatis", "Diaceratherium_lemanense", "Diceratherium_sp", "Dicerorhinus_fusuiensis",
+"Dicerorhinus_sumatrensis", "Diceros_bicornis", "Diceros_praecox", "Dihoplus_schleiermacheri", "Dromoceratherium_mirallesi", "Elasmotherium_sibiricum",
+"Epiaceratherium_bolcense", "Epiaceratherium_delemontense", "Gaindatherium_browni", "Hispanotherium_beonense", "Hoploaceratherium_tetradactylum", 
+"Lartetotherium_sansaniense", "Menoceras_arikarense", "Nesorhinus_hayasakai", "Nesorhinus_philippinensis", "Plesiaceratherium_fahlbuschi", "Pleuroceros_blanfordi",
+"Pleuroceros_pleuroceros", "Pliorhinus_megarhinus", "Pliorhinus_miguelcrusafonti", "Pliorhinus_ringstroemi", "Prosantorhinus_douvillei", "Protaceratherium_minutum", 
+"Rhinoceros_kendengindicus", "Rhinoceros_platyrhinus","Rhinoceros_sinensis", "Rhinoceros_sondaicus", "Rhinoceros_unicornis", "Ronzotherium_filholi", "Ronzotherium_romani",
+"Shansirhinus_ringstromi", "Stephanorhinus_etruscus", "Stephanorhinus_kirchbergensis", "Stephanorhinus_pikermiensis", "Subhyracodon_mitis",
+"Teleoceras_aepysoma", "Trigonias_osborni", "Victoriaceros_hooijeri", "Subhyracodon_mitis")
 
 #clade Amynodontidae 
 clade_amynodontidae = clade("Metamynodon_planifrons", "Sellamynodon_zimborensis")
@@ -60,7 +71,7 @@ clade_paraceratheriidae  = clade("Paraceratherium_bugtiense", "Paraceratherium_g
 # Stephanorhinus genus
 clade_stephanorhinus = clade("Stephanorhinus_etruscus", "Stephanorhinus_kirchbergensis", "Stephanorhinus_pikermiensis")
 
-constraints = v(ingroup, clade_amynodontidae, clade_paraceratheriidae, clade_stephanorhinus)
+constraints = v(ingroup, clade_amynodontidae, clade_paraceratheriidae, clade_stephanorhinus, clade_rhinocerotidae)
 
 phylogeny ~ dnConstrainedTopology(fbd_dist, constraints=constraints)
 
