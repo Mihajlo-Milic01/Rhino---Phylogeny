@@ -62,9 +62,6 @@ clade_rhinocerotidae = clade("Aceratherium_incisivum", "Acerorhinus_zernowi", "A
 "Shansirhinus_ringstromi", "Stephanorhinus_etruscus", "Stephanorhinus_kirchbergensis", "Stephanorhinus_pikermiensis", "Subhyracodon_mitis",
 "Teleoceras_aepysoma", "Trigonias_osborni", "Victoriaceros_hooijeri", "Subhyracodon_mitis")
 
-# Elasmotheriinae
-clade_elasmotheriinae = clade("Diaceratherium_lemanense", "Elasmotherium_sibiricum", "Bugtirhinus_praecursor", "Hispanotherium_beonense", "Menoceras_arikarense", "Victoriaceros_hooijeri")
-
 #clade Amynodontidae 
 clade_amynodontidae = clade("Metamynodon_planifrons", "Sellamynodon_zimborensis")
 
