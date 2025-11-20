@@ -18,7 +18,7 @@ moves = VectorMoves()
 
 source("scripts/model_FBDRP_rhinos.Rev") # FBD tree prior
 
-source("scripts/model_UExp_rhinos.Rev") # UExp relaxed clock
+source("scripts/model_UExp_rhinos.Rev") # UExp strict clock
 
 source("scripts/model_GTRG_rhinos.Rev") # Molecular substitution model (GTR+G)
 
