@@ -71,7 +71,7 @@ clade_paraceratheriidae  = clade("Paraceratherium_bugtiense", "Paraceratherium_g
 # Stephanorhinus genus
 clade_stephanorhinus = clade("Stephanorhinus_etruscus", "Stephanorhinus_kirchbergensis", "Stephanorhinus_pikermiensis")
 
-constraints = v(ingroup, clade_amynodontidae, clade_paraceratheriidae, clade_stephanorhinus, clade_rhinocerotidae, clade_elasmotheriinae)
+constraints = v(ingroup, clade_amynodontidae, clade_paraceratheriidae, clade_stephanorhinus, clade_rhinocerotidae)
 
 phylogeny ~ dnConstrainedTopology(fbd_dist, constraints=constraints)
 
