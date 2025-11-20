@@ -1,6 +1,6 @@
 ## Defining strict clock model for molecular data
 
-clock_strict ~ dnExponential( 1.0 )
+clock_rates ~ dnExponential( 1.0 )
 
 moves.append( mvScale(clock_strict, lambda=0.01, weight=1.0) )
 moves.append( mvScale(clock_strict, lambda=0.1,  weight=1.0) )
