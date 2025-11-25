@@ -33,7 +33,7 @@ monitors.append( mnFile(filename="output/rhinos_FBD_RB.trees", printgen=10, phyl
 monitors.append( mnScreen(printgen=10) )
 
 mymcmc = mcmc(mymodel, monitors, moves, nruns=1, combine="mixed")
-mymcmc.run(generations=150000, tuningInterval=100)
+mymcmc.run(generations=250000, tuningInterval=100)
 
 # summarize output
 treetrace = readTreeTrace("output/rhinos_FBD_RB.trees", treetype="clock")
