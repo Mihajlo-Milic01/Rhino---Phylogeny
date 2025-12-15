@@ -45,7 +45,7 @@ ingroup = clade("Aceratherium_incisivum", "Acerorhinus_zernowi", "Alicornops_alf
 "Epiaceratherium_bolcense", "Epiaceratherium_delemontense", "Gaindatherium_browni", "Hispanotherium_beonense", "Hoploaceratherium_tetradactylum", 
 "Lartetotherium_sansaniense", "Menoceras_arikarense", "Nesorhinus_hayasakai", "Nesorhinus_philippinensis", "Plesiaceratherium_fahlbuschi", "Pleuroceros_blanfordi",
 "Pleuroceros_pleuroceros", "Pliorhinus_megarhinus", "Pliorhinus_miguelcrusafonti", "Pliorhinus_ringstroemi", "Prosantorhinus_douvillei", "Protaceratherium_minutum", 
-"Rhinoceros_kendengindicus", "Rhinoceros_platyrhinus","Rhinoceros_sinensis", "Rhinoceros_sondaicus", "Rhinoceros_unicornis", "Ronzotherium_filholi", "Ronzotherium_romani",
+"Rhinoceros_kendengindicus", "Rhinoceros_platyrhinus","Rhinoceros_sinensis", "Rhinoceros_sondaicus", "Rhinoceros_unicornis", "Ronzotherium_filholi", "Ronzotherium_heissigi",
 "Shansirhinus_ringstromi", "Stephanorhinus_etruscus", "Stephanorhinus_kirchbergensis", "Stephanorhinus_pikermiensis", "Subhyracodon_mitis",
 "Teleoceras_aepysoma", "Trigonias_osborni", "Victoriaceros_hooijeri", "Metamynodon_planifrons", "Sellamynodon_zimborensis", 
 "Hyrachyus_eximius", "Hyracodon_nebraskensis", "Paraceratherium_bugtiense", "Paraceratherium_grangeri")
@@ -58,7 +58,7 @@ clade_rhinocerotidae = clade("Aceratherium_incisivum", "Acerorhinus_zernowi", "A
 "Epiaceratherium_bolcense", "Epiaceratherium_delemontense", "Gaindatherium_browni", "Hispanotherium_beonense", "Hoploaceratherium_tetradactylum", 
 "Lartetotherium_sansaniense", "Menoceras_arikarense", "Nesorhinus_hayasakai", "Nesorhinus_philippinensis", "Plesiaceratherium_fahlbuschi", "Pleuroceros_blanfordi",
 "Pleuroceros_pleuroceros", "Pliorhinus_megarhinus", "Pliorhinus_miguelcrusafonti", "Pliorhinus_ringstroemi", "Prosantorhinus_douvillei", "Protaceratherium_minutum", 
-"Rhinoceros_kendengindicus", "Rhinoceros_platyrhinus","Rhinoceros_sinensis", "Rhinoceros_sondaicus", "Rhinoceros_unicornis", "Ronzotherium_filholi", "Ronzotherium_romani",
+"Rhinoceros_kendengindicus", "Rhinoceros_platyrhinus","Rhinoceros_sinensis", "Rhinoceros_sondaicus", "Rhinoceros_unicornis", "Ronzotherium_filholi", "Ronzotherium_heissigi",
 "Shansirhinus_ringstromi", "Stephanorhinus_etruscus", "Stephanorhinus_kirchbergensis", "Stephanorhinus_pikermiensis", "Subhyracodon_mitis",
 "Teleoceras_aepysoma", "Trigonias_osborni", "Victoriaceros_hooijeri", "Subhyracodon_mitis")
 
