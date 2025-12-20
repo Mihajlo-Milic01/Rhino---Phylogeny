@@ -1,5 +1,5 @@
 # not adding the output
-output*
+runs/*/output/*.trees
 
 # no helper files
 .DS_Store

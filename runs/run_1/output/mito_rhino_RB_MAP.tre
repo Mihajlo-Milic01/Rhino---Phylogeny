@@ -1,0 +1,19 @@
+#NEXUS
+
+	Begin taxa;
+	Dimensions ntax=8;
+	Taxlabels
+		Ceratotherium_simum
+		Coelodonta_antiquitatis
+		Dicerorhinus_sumatrensis
+		Diceros_bicornis
+		Elasmotherium_sibiricum
+		Rhinoceros_sondaicus
+		Rhinoceros_unicornis
+		Stephanorhinus_kirchbergensis
+		;
+End;
+
+Begin trees;
+tree TREE1 = [&U](((((Coelodonta_antiquitatis[&index=1]:0.043841[&brlen_95%_HPD={0.03783,0.048999}],Stephanorhinus_kirchbergensis[&index=7]:0.041465[&brlen_95%_HPD={0.036276,0.047058}])[&index=9,posterior=1.000000]:0.030791[&brlen_95%_HPD={0.024906,0.036792}],Dicerorhinus_sumatrensis[&index=3]:0.067993[&brlen_95%_HPD={0.060388,0.075995}])[&index=10,posterior=1.000000]:0.048839[&brlen_95%_HPD={0.040438,0.058668}],(Rhinoceros_sondaicus[&index=5]:0.047029[&brlen_95%_HPD={0.041397,0.053235}],Rhinoceros_unicornis[&index=6]:0.037293[&brlen_95%_HPD={0.03163,0.042666}])[&index=11,posterior=1.000000]:0.070548[&brlen_95%_HPD={0.062624,0.07975}])[&index=12,posterior=0.650233]:0.008880[&brlen_95%_HPD={0.00355,0.01433}],Elasmotherium_sibiricum[&index=4]:0.241980[&brlen_95%_HPD={0.219446,0.267238}])[&index=13,posterior=1.000000]:0.047692[&brlen_95%_HPD={0.038788,0.057816}],Ceratotherium_simum[&index=2]:0.046975[&brlen_95%_HPD={0.040611,0.053467}],Diceros_bicornis[&index=8]:0.050651[&brlen_95%_HPD={0.043917,0.057043}])[&index=14,posterior=1.000000]:0.000000;
+End;

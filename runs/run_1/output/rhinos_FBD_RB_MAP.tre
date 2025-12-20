@@ -1,0 +1,74 @@
+#NEXUS
+
+	Begin taxa;
+	Dimensions ntax=63;
+	Taxlabels
+		Aceratherium_incisivum
+		Acerorhinus_zernowi
+		Alicornops_alfambrense
+		Alicornops_complanatum
+		Alicornops_simorrense
+		Aprotodon_fatehjangense
+		Brachypotherium_brachypus
+		Brachypotherium_perimense
+		Bugtirhinus_praecursor
+		Ceratotherium_neumayri
+		Ceratotherium_simum
+		Chilotherium_anderssoni
+		Chilotherium_kowalevskii
+		Chilotherium_perisae
+		Coelodonta_antiquitatis
+		Diaceratherium_lemanense
+		Diceratherium_sp
+		Dicerorhinus_fusuiensis
+		Dicerorhinus_sumatrensis
+		Diceros_bicornis
+		Diceros_praecox
+		Dihoplus_schleiermacheri
+		Dromoceratherium_mirallesi
+		Elasmotherium_sibiricum
+		Epiaceratherium_bolcense
+		Epiaceratherium_delemontense
+		Gaindatherium_browni
+		Hispanotherium_beonense
+		Hoploaceratherium_tetradactylum
+		Hyrachyus_eximius
+		Hyracodon_nebraskensis
+		Lartetotherium_sansaniense
+		Menoceras_arikarense
+		Metamynodon_planifrons
+		Nesorhinus_hayasakai
+		Nesorhinus_philippinensis
+		Paraceratherium_bugtiense
+		Paraceratherium_grangeri
+		Plesiaceratherium_fahlbuschi
+		Pleuroceros_blanfordi
+		Pleuroceros_pleuroceros
+		Pliorhinus_megarhinus
+		Pliorhinus_miguelcrusafonti
+		Pliorhinus_ringstroemi
+		Prosantorhinus_douvillei
+		Protaceratherium_minutum
+		Rhinoceros_kendengindicus
+		Rhinoceros_platyrhinus
+		Rhinoceros_sinensis
+		Rhinoceros_sondaicus
+		Rhinoceros_unicornis
+		Ronzotherium_filholi
+		Ronzotherium_heissigi
+		Sellamynodon_zimborensis
+		Shansirhinus_ringstromi
+		Stephanorhinus_etruscus
+		Stephanorhinus_kirchbergensis
+		Stephanorhinus_pikermiensis
+		Subhyracodon_mitis
+		Tapirus_terrestris
+		Teleoceras_aepysoma
+		Trigonias_osborni
+		Victoriaceros_hooijeri
+		;
+End;
+
+Begin trees;
+tree TREE1 = [&R]((((((((((((((((Pliorhinus_megarhinus[&index=50,age_95%_HPD={1.9,1.9}]:4.677442,Pliorhinus_miguelcrusafonti[&index=15,age_95%_HPD={3.55,3.55}]:3.027442)[&index=64,posterior=0.729802,age_95%_HPD={5.34174,8.12773}]:2.142577,Pliorhinus_ringstroemi[&index=51,sampled_ancestor=0.008444,age_95%_HPD={5.3,5.3}]:3.420019)[&index=65,posterior=0.943561,age_95%_HPD={7.10379,10.4141}]:2.675477,Dihoplus_schleiermacheri[&index=41,age_95%_HPD={4.41,4.41}]:6.985496)[&index=66,posterior=0.608924,age_95%_HPD={9.63578,13.2805}]:1.499179,(((Stephanorhinus_etruscus[&index=34,age_95%_HPD={0.419999,0.420002}]:4.083900,Stephanorhinus_kirchbergensis[&index=19,age_95%_HPD={0.009999,0.010002}]:4.493900)[&index=67,posterior=1.000000,age_95%_HPD={2.89544,6.19049}]:4.170423,Ceratotherium_neumayri[&index=42,age_95%_HPD={4.5,4.5}]:4.174323)[&index=68,posterior=0.141587,age_95%_HPD={7.10845,10.2458}]:1.807365,Stephanorhinus_pikermiensis[&index=8,sampled_ancestor=0.005511,age_95%_HPD={7.1,7.1}]:3.381689)[&index=69,posterior=0.171718,age_95%_HPD={9.24399,12.0015}]:2.412987)[&index=70,posterior=0.050484,age_95%_HPD={11.3035,14.5374}]:0.440592,(((Diceros_bicornis[&index=25]:3.683712,Diceros_praecox[&index=16,age_95%_HPD={2.4,2.4}]:1.283711)[&index=71,posterior=0.528664,age_95%_HPD={2.66859,4.80246}]:1.032285,Ceratotherium_simum[&index=52]:4.715998)[&index=72,posterior=0.979735,age_95%_HPD={3.39642,6.10168}]:2.850878,Coelodonta_antiquitatis[&index=14,age_95%_HPD={0.01,0.010002}]:7.556874)[&index=73,posterior=0.969425,age_95%_HPD={5.75759,9.54349}]:5.768393)[&index=74,posterior=0.994934,age_95%_HPD={11.5874,15.2325}]:2.680111,(((((Rhinoceros_kendengindicus[&index=17,age_95%_HPD={0.6,0.600002}]:1.292979,Rhinoceros_unicornis[&index=24]:1.892979)[&index=75,posterior=0.604035,age_95%_HPD={1.14077,2.71705}]:0.752673,Rhinoceros_platyrhinus[&index=58,age_95%_HPD={0.52,0.520002}]:2.125651)[&index=76,posterior=0.673807,age_95%_HPD={1.88442,3.53482}]:1.833496,(Rhinoceros_sinensis[&index=40,age_95%_HPD={0.01,0.010002}]:3.341630,Rhinoceros_sondaicus[&index=39]:3.351630)[&index=77,posterior=0.215803,age_95%_HPD={2.24134,4.44117}]:1.127517)[&index=78,posterior=0.985868,age_95%_HPD={2.92641,6.2435}]:3.504959,((Dicerorhinus_sumatrensis[&index=18]:0.540001)Dicerorhinus_fusuiensis[&index=79,posterior=0.914141,age_95%_HPD={0.54,0.540002},sampled_ancestor=0.914141]:5.940324,(Nesorhinus_hayasakai[&index=57,age_95%_HPD={0.5,0.500002}]:1.852825,Nesorhinus_philippinensis[&index=38,age_95%_HPD={0.6,0.600002}]:1.752825)[&index=80,posterior=1.000000,age_95%_HPD={1.30822,3.60991}]:4.127500)[&index=81,posterior=0.651675,age_95%_HPD={4.55127,8.31423}]:1.503781)[&index=82,posterior=0.999733,age_95%_HPD={6.16466,9.85712}]:5.746586,(Gaindatherium_browni[&index=13,age_95%_HPD={7.2,7.2}]:2.700000)Lartetotherium_sansaniense[&index=83,posterior=1.000000,age_95%_HPD={9.9,9.9},sampled_ancestor=1.000000]:3.830691)[&index=84,posterior=0.887566,age_95%_HPD={11.9091,15.8242}]:2.284688)[&index=85,posterior=1.000000,age_95%_HPD={14.0715,17.9772}]:6.188885,((((Aceratherium_incisivum[&index=59,age_95%_HPD={5,5}]:7.200845,Hoploaceratherium_tetradactylum[&index=43,age_95%_HPD={9.9,9.9}]:2.300845)[&index=86,posterior=0.498889,age_95%_HPD={10.8764,13.6432}]:0.962179,Acerorhinus_zernowi[&index=60,age_95%_HPD={7.1,7.1}]:6.063024)[&index=87,posterior=0.448049,age_95%_HPD={11.4826,14.8983}]:2.231778,(Alicornops_complanatum[&index=32,age_95%_HPD={7.2,7.2}]:3.315215,Alicornops_simorrense[&index=45,sampled_ancestor=0.376767,age_95%_HPD={8.9,8.9}]:1.615215)[&index=88,posterior=0.597014,age_95%_HPD={9.34449,11.8944}]:4.879587)[&index=89,posterior=0.437294,age_95%_HPD={13.6522,17.3703}]:5.093751,Dromoceratherium_mirallesi[&index=44,age_95%_HPD={14.2,14.2}]:6.288553)[&index=90,posterior=0.281486,age_95%_HPD={18.3978,22.6001}]:1.715711)[&index=91,posterior=0.340503,age_95%_HPD={20.0235,24.3009}]:1.833726,((((Aprotodon_fatehjangense[&index=37,age_95%_HPD={11.2,11.2}]:6.132068,Brachypotherium_brachypus[&index=28,age_95%_HPD={9.9,9.9}]:7.432068)[&index=92,posterior=0.028709,age_95%_HPD={15.5805,19.3083}]:2.164943,(Prosantorhinus_douvillei[&index=20,age_95%_HPD={14.2,14.2}]:3.554991,Teleoceras_aepysoma[&index=26,age_95%_HPD={4.61,4.61}]:13.144991)[&index=93,posterior=0.310284,age_95%_HPD={15.8485,19.8608}]:1.742019)[&index=94,posterior=0.000978,age_95%_HPD={18.4277,20.7864}]:0.844783,((Brachypotherium_perimense[&index=31,age_95%_HPD={5.3,5.3}]:7.848568,Chilotherium_anderssoni[&index=48,age_95%_HPD={5.3,5.3}]:7.848568)[&index=95,posterior=0.181673,age_95%_HPD={10.5787,16.021}]:3.238748,Plesiaceratherium_fahlbuschi[&index=35,sampled_ancestor=0.000267,age_95%_HPD={12.85,12.85}]:3.537316)[&index=96,posterior=0.006666,age_95%_HPD={14.7637,18.1076}]:3.954477)[&index=97,posterior=0.041596,age_95%_HPD={18.9654,21.986}]:1.936528,Diaceratherium_lemanense[&index=36,age_95%_HPD={19.5,19.5}]:2.778322)[&index=98,posterior=0.041685,age_95%_HPD={21.2233,23.7271}]:1.759667)[&index=99,posterior=0.027286,age_95%_HPD={22.5377,25.4233}]:2.452274,(((Alicornops_alfambrense[&index=9,sampled_ancestor=0.001067,age_95%_HPD={7.6,7.6}]:8.800000)Protaceratherium_minutum[&index=100,posterior=0.439161,age_95%_HPD={16.4,16.4},sampled_ancestor=0.439161]:4.849539,Diceratherium_sp[&index=47,age_95%_HPD={13.82,13.82}]:7.429539)[&index=101,posterior=0.413119,age_95%_HPD={18.9696,23.4721}]:3.908464,(Pleuroceros_blanfordi[&index=56,age_95%_HPD={16.4,16.4}]:6.175570,Pleuroceros_pleuroceros[&index=46,age_95%_HPD={19.5,19.5}]:3.075570)[&index=102,posterior=0.947471,age_95%_HPD={20.9712,24.3409}]:2.582433)[&index=103,posterior=0.121323,age_95%_HPD={23.4087,26.9377}]:1.332260)[&index=104,posterior=0.045329,age_95%_HPD={24.6946,28.2322}]:4.330868,(((((Chilotherium_perisae[&index=12,sampled_ancestor=0.011021,age_95%_HPD={7.1,7.1}]:1.918603,Shansirhinus_ringstromi[&index=49,age_95%_HPD={2.6,2.6}]:6.418603)[&index=105,posterior=0.977424,age_95%_HPD={7.61356,10.56}]:2.367318,Chilotherium_kowalevskii[&index=62,age_95%_HPD={7.1,7.1}]:4.285920)[&index=106,posterior=0.963648,age_95%_HPD={9.70806,13.1293}]:8.108867,Elasmotherium_sibiricum[&index=30,age_95%_HPD={0.038999,0.039002}]:19.455788)[&index=107,posterior=0.008977,age_95%_HPD={16.1656,22.5065}]:5.302934,((Bugtirhinus_praecursor[&index=11,sampled_ancestor=0.026842,age_95%_HPD={17.2,17.2}]:4.638935,Hispanotherium_beonense[&index=55,sampled_ancestor=0.004000,age_95%_HPD={16.4,16.4}]:5.438935)[&index=108,posterior=0.496400,age_95%_HPD={19.5944,23.8482}]:2.943617,Victoriaceros_hooijeri[&index=10,sampled_ancestor=0.000267,age_95%_HPD={16.4,16.4}]:8.382551)[&index=109,posterior=0.199627,age_95%_HPD={21.798,28.162}]:0.015170)[&index=110,posterior=0.027109,age_95%_HPD={22.2861,27.2675}]:2.071520,Menoceras_arikarense[&index=63,age_95%_HPD={17.34,17.34}]:9.529241)[&index=111,posterior=0.036175,age_95%_HPD={24.1176,29.8899}]:3.951890)[&index=112,posterior=0.447427,age_95%_HPD={28.1671,33.5348}]:6.397411,((Ronzotherium_filholi[&index=23,age_95%_HPD={27.24,27.24}]:3.987924,Ronzotherium_heissigi[&index=29,age_95%_HPD={27.24,27.24}]:3.987924)[&index=113,posterior=0.999378,age_95%_HPD={29.5874,33.0096}]:5.654892,Subhyracodon_mitis[&index=61,sampled_ancestor=0.000089,age_95%_HPD={33.9,33.9}]:2.982816)[&index=114,posterior=0.129588,age_95%_HPD={35.3784,38.5337}]:0.335725)[&index=115,posterior=0.262110,age_95%_HPD={35.7551,39.0291}]:2.267572,(Epiaceratherium_bolcense[&index=53,sampled_ancestor=0.094480,age_95%_HPD={32.63,32.63}]:1.486018,Epiaceratherium_delemontense[&index=21,sampled_ancestor=0.193138,age_95%_HPD={27.24,27.24}]:6.876018)[&index=116,posterior=0.171185,age_95%_HPD={32.6303,35.832}]:5.370095)[&index=117,posterior=0.451960,age_95%_HPD={37.8599,41.1313}]:0.797972,Trigonias_osborni[&index=22,age_95%_HPD={33.9,33.9}]:6.384086)[&index=118,posterior=1.000000,age_95%_HPD={38.6178,42.0019}]:2.273382,(((Paraceratherium_bugtiense[&index=7,age_95%_HPD={23.03,23.03}]:2.268008,Paraceratherium_grangeri[&index=6,age_95%_HPD={23.03,23.03}]:2.268008)[&index=119,posterior=1.000000,age_95%_HPD={24.1741,26.6048}]:8.314755,Hyracodon_nebraskensis[&index=2,age_95%_HPD={28,28}]:5.612763)[&index=120,posterior=0.947294,age_95%_HPD={30.7079,36.9807}]:5.008201,(Metamynodon_planifrons[&index=5,sampled_ancestor=0.202649,age_95%_HPD={32.1,32.1}]:1.899018,Sellamynodon_zimborensis[&index=4,age_95%_HPD={27.3,27.3}]:6.699018)[&index=121,posterior=0.797351,age_95%_HPD={32.1276,36.0873}]:4.621946)[&index=122,posterior=0.866145,age_95%_HPD={36.2095,41.349}]:3.936504)[&index=123,posterior=0.995645,age_95%_HPD={40.6725,44.8681}]:2.822532)Hyrachyus_eximius[&index=124,posterior=0.856813,age_95%_HPD={45.38,45.38},sampled_ancestor=0.856813]:0.755319,Tapirus_terrestris[&index=1]:46.135320)[&index=125,posterior=1.000000,age_95%_HPD={45.3801,47.8728}]:0.000000;
+End;
