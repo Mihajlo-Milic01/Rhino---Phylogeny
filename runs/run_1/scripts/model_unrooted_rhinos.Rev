@@ -1,0 +1,18 @@
+################################################################################
+#
+# RevBayes Script: Uniform prior on unrooted trees.
+#
+# authors: Sebastian Hoehna
+#
+################################################################################
+
+
+
+# Prior distribution on the tree topology
+br_len_lambda <- 10.0
+phylogeny ~ dnUniformTopologyBranchLength(taxa, branchLengthDistribution=dnExponential(br_len_lambda))
+moves.append( mvNNI(phylogeny, weight=4*n_taxa) )
+moves.append( mvSPR(phylogeny, weight=n_taxa/2.0) )
+moves.append( mvBranchLengthScale(phylogeny, weight=4*n_taxa) )
+
+TL := phylogeny.treeLength()
