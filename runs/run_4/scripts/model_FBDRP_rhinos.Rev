@@ -50,8 +50,8 @@ ingroup = clade("Aceratherium_incisivum", "Acerorhinus_zernowi", "Alicornops_alf
 "Teleoceras_aepysoma", "Trigonias_osborni", "Victoriaceros_hooijeri", "Metamynodon_planifrons", "Sellamynodon_zimborensis", 
 "Hyrachyus_eximius", "Hyracodon_nebraskensis", "Paraceratherium_bugtiense", "Paraceratherium_grangeri")
 
-# familiy Rhinoceroditae - needed since Paraceratherium appeared within the familiy
-clade_rhinocerotidae = clade("Aceratherium_incisivum", "Acerorhinus_zernowi", "Alicornops_alfambrense", "Alicornops_complanatum", "Alicornops_simorrense", "Aprotodon_fatehjangense",
+# families Rhinoceroditae + Paraceratheriidae
+clade_rhino_para = clade("Aceratherium_incisivum", "Acerorhinus_zernowi", "Alicornops_alfambrense", "Alicornops_complanatum", "Alicornops_simorrense", "Aprotodon_fatehjangense",
 "Brachypotherium_brachypus", "Brachypotherium_perimense", "Bugtirhinus_praecursor", "Ceratotherium_neumayri", "Ceratotherium_simum", "Chilotherium_anderssoni",
 "Chilotherium_kowalevskii", "Chilotherium_perisae", "Coelodonta_antiquitatis", "Diaceratherium_lemanense", "Diceratherium_sp", "Dicerorhinus_fusuiensis",
 "Dicerorhinus_sumatrensis", "Diceros_bicornis", "Diceros_praecox", "Dihoplus_schleiermacheri", "Dromoceratherium_mirallesi", "Elasmotherium_sibiricum",
@@ -60,15 +60,9 @@ clade_rhinocerotidae = clade("Aceratherium_incisivum", "Acerorhinus_zernowi", "A
 "Pleuroceros_pleuroceros", "Pliorhinus_megarhinus", "Pliorhinus_miguelcrusafonti", "Pliorhinus_ringstroemi", "Prosantorhinus_douvillei", "Protaceratherium_minutum", 
 "Rhinoceros_kendengindicus", "Rhinoceros_platyrhinus","Rhinoceros_sinensis", "Rhinoceros_sondaicus", "Rhinoceros_unicornis", "Ronzotherium_filholi", "Ronzotherium_heissigi",
 "Shansirhinus_ringstromi", "Stephanorhinus_etruscus", "Stephanorhinus_kirchbergensis", "Stephanorhinus_pikermiensis", "Subhyracodon_mitis",
-"Teleoceras_aepysoma", "Trigonias_osborni", "Victoriaceros_hooijeri", "Subhyracodon_mitis")
+"Teleoceras_aepysoma", "Trigonias_osborni", "Victoriaceros_hooijeri", "Subhyracodon_mitis", "Paraceratherium_bugtiense", "Paraceratherium_grangeri")
 
-#clade Amynodontidae 
-clade_amynodontidae = clade("Metamynodon_planifrons", "Sellamynodon_zimborensis")
-
-#clade Paraceratheriidae   
-clade_paraceratheriidae  = clade("Paraceratherium_bugtiense", "Paraceratherium_grangeri")
-
-constraints = v(ingroup, clade_amynodontidae, clade_paraceratheriidae, clade_rhinocerotidae)
+constraints = v(ingroup, clade_rhino_para)
 
 phylogeny ~ dnConstrainedTopology(fbd_dist, constraints=constraints)
 

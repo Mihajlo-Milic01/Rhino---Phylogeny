@@ -28,17 +28,17 @@ mymodel = model(pi)
 
 monitors = VectorMonitors()
 
-monitors.append( mnModel(filename="output/rhinos_FBD_RB.log", printgen=20) )
-monitors.append( mnFile(filename="output/rhinos_FBD_RB.trees", printgen=20, phylogeny) )
-monitors.append( mnScreen(printgen=20) )
+monitors.append( mnModel(filename="output/rhinos_FBD_RB_4.log", printgen=50) )
+monitors.append( mnFile(filename="output/rhinos_FBD_RB_4.trees", printgen=50, phylogeny) )
+monitors.append( mnScreen(printgen=50) )
 
 mymcmc = mcmc(mymodel, monitors, moves, nruns=1, combine="mixed")
-mymcmc.run(generations=300000, tuningInterval=100)
+mymcmc.run(generations=800000, tuningInterval=100)
 
 # summarize output
-treetrace = readTreeTrace("output/rhinos_FBD_RB.trees", treetype="clock", burnin=0.25)
+treetrace = readTreeTrace("output/rhinos_FBD_RB_4.trees", treetype="clock", burnin=0.25)
 # and then get the MAP tree
-map_tree = mapTree(treetrace,"output/rhinos_FBD_RB_MAP.tre")
-mcc_tree = mccTree(treetrace,"output/rhinos_FBD_RB_MCC.tre")
+map_tree = mapTree(treetrace,"output/rhinos_FBD_RB_MAP_4.tre")
+mcc_tree = mccTree(treetrace,"output/rhinos_FBD_RB_MCC_4.tre")
 
 q() # tell program to quit once the analysis is done
