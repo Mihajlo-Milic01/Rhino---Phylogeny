@@ -33,7 +33,7 @@ monitors.append( mnFile(filename="output/rhinos_FBD_RB_4.trees", printgen=50, ph
 monitors.append( mnScreen(printgen=50) )
 
 mymcmc = mcmc(mymodel, monitors, moves, nruns=1, combine="mixed")
-mymcmc.run(generations=800000, tuningInterval=100)
+mymcmc.run(generations=800000, tuningInterval=100, checkpointFile = "output/restart_checkpoint.ckp", checkpointInterval = 5000)
 
 # summarize output
 treetrace = readTreeTrace("output/rhinos_FBD_RB_4.trees", treetype="clock", burnin=0.25)

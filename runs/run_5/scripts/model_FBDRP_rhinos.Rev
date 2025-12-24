@@ -20,7 +20,7 @@ moves.append( mvScale(psi, lambda=0.01, weight=1) )
 moves.append( mvScale(psi, lambda=0.1,  weight=1) )
 moves.append( mvScale(psi, lambda=1,    weight=1) )
 
-origin_time ~ dnUnif(55.0, 65.0) # Divergence of Rhinocerotoidea and lineage leading to modern Tapiridae; based on Liu et al 2021 and Bai et al 2020
+origin_time ~ dnUnif(55.0, 100.0) #based on Liu et al 2021 and Bai et al 2020
 
 moves.append( mvSlide(origin_time, delta=0.01, weight=5.0) )
 moves.append( mvSlide(origin_time, delta=0.1,  weight=5.0) )
@@ -29,8 +29,6 @@ moves.append( mvSlide(origin_time, delta=1,    weight=5.0) )
 fbd_dist = dnFBDP(origin=origin_time, lambda=speciation_rate, mu=extinction_rate, psi=psi, rho=rho, taxa=taxa)
 
 #phylogeny ~ dnFBDP(originAge=origin_time, lambba=speciation_rate, mu=extinction_rate, psi=psi, rho=rho, taxa=taxa)
-
-## might use the different function for our FBD model
 
 ## Topological constraints
 # outgroup
@@ -73,5 +71,9 @@ moves.append( mvNodeTimeSlideUniform(phylogeny, weight=40.0) )
 moves.append( mvRootTimeSlideUniform(phylogeny, origin_time, weight=5.0) )
 
 num_samp_anc := phylogeny.numSampledAncestors()
+TL := phylogeny.treeLength()
+TH := phylogeny.rootAge()
 
-#age_extant := tmrca(phylogeny, clade_extant) # MRCA age of all extant bears
+# obtaining the age of MRCA for taxa present in morphometric dataset
+clade_morphometrics = clade("Hyracodon_nebraskensis", "Rhinoceros_unicornis")
+age_morphometrics := tmrca(phylogeny, clade_morphometrics)
