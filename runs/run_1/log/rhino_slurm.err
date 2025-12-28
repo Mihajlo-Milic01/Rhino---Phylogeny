@@ -1,0 +1,2 @@
+/var/spool/slurmd/job16446785/slurm_script: line 26: 926282 Killed                  rb ${rb_script}
+[2025-12-28T08:10:18.558] error: Detected 1 oom_kill event in StepId=16446785.batch. Some of the step tasks have been OOM Killed.
